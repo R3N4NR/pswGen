@@ -9,7 +9,8 @@ def gerar_senha(nome_usuario):
         'e': ['3', '&'], 'E': ['3', '&'],
         'i': ['1', '!', 'I'], 'I': ['1', '!', 'i'],
         'o': ['0'], 'O': ['0'],
-        'u': ['V'], 'U': ['V']
+        'u': ['V'
+              ], 'U': ['V']
     }
 
     senha = ""
@@ -20,13 +21,13 @@ def gerar_senha(nome_usuario):
         else:
             senha += char
 
-    opcao_p5 = random.choice(['start', 'end', 'random'])
+    startEndRandom = random.choice(['start', 'end', 'random'])
     
     # Inserir "p5" antes ou depois da senha
     if random.choice([True, False]):
-        senha = opcao_p5 + senha
+        senha = startEndRandom + senha
     else:
-        senha = senha + opcao_p5
+        senha = senha + startEndRandom
 
     return senha
 
